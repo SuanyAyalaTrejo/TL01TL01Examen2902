@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper {
 
     public static final String NameDatabase = "DbContactos";
-    public static final String NameTabla = "TbContactos";
+    public static final String NameTabla = "Contactos";
     public static final String id = "ID";
     public static final String nombre = "Nombre";
     public static final String telefono = "Telefono";
@@ -18,9 +18,9 @@ public class DatabaseHelper {
 
 
 
-    public static String CreateTBContactos = "CREATE TABLE Contactos (id INTEGER PRIMARY KEY AUTOINCREMENT)" +
+    public static String CreateContactos = "CREATE TABLE Contactos (id INTEGER PRIMARY KEY AUTOINCREMENT)" +
             "nombre TEXT, telefono INTEGER, pais TEXT, acerca TEXT )";
 
-    public static String DropTBContactos = "DROP TABLE IF EXISTS Contactos";
+    public static String DropContactos = "DROP TABLE IF EXISTS Contactos";
 
 }
