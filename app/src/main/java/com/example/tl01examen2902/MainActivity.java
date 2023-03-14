@@ -20,58 +20,23 @@ import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
 
-    SQLiteConnection connection;
-    ListView listContactos;
-    ArrayList<Contactos> list;
-    ArrayList<String> ArrayContactos;
 
 
-
+    Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        connection = new SQLiteConnection(this, DatabaseHelper.NameDatabase, null, 1);
-        listContactos = (ListView) findViewById(R.id.listContactos);
-        ObtenerListContactos();
-
-        ArrayAdapter adp = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, ArrayContactos);
-        listContactos.setAdapter(adp);
-
-
+        button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openNewActivity();
+            }
+        });
     }
-
-
-    private void ObtenerListContactos() {
-        SQLiteDatabase db = connection.getReadableDatabase();
-        Contactos person = null;
-        list = new ArrayList<Contactos>();
-
-        Cursor cursor = db.rawQuery("SELECT * FROM " + DatabaseHelper.NameTable, null);
-
-        while(cursor.moveToNext()){
-            person = new Contactos();
-            person.setId(cursor.getInt(0));
-            person.setNombre(cursor.getString(1));
-            person.setTelefono(cursor.getInt(2));
-            person.setPais(cursor.getString(3));
-            person.setAcerca(cursor.getString(4));
-
-            list.add(person);
-
-            fillList();
-        }
-
-        cursor.close();
-    }
-
-    private void fillList() {
-        ArrayContactos = new ArrayList<String>();
-        for(int i = 0; i < list.size(); i++){
-            ArrayContactos.add(list.get(i).getId() + " | " +
-                    list.get(i).getNombre() + " | " +
-                    list.get(i).getId());
-        }
+    public void openNewActivity(){
+        Intent intent = new Intent(this, ActivityList.class);
+        startActivity(intent);
     }
 }
