@@ -2,5 +2,8 @@
     <string name="app_name">Contactos</string>
     <string name="btnGuardar">Guardar</string>
     <string name="btnCancelar">Cancelar</string>
+    <string name="txtCodigo">Cancelar</string>
+    <string name="btnAgregar">Agregar</string>
+
 
 </resources>
