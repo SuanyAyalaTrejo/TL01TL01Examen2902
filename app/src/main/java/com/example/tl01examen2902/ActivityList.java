@@ -83,9 +83,9 @@ public class ActivityList extends AppCompatActivity {
     private void fillList() {
         ArrayContactos = new ArrayList<String>();
         for(int i = 0; i < list.size(); i++){
-            ArrayContactos.add(list.get(i).getId() + " | " +
+            ArrayContactos.add(list.get(i).getId() + " | "+
                     list.get(i).getNombre() + " | " +
-                    list.get(i).getId());
+                    list.get(i).getId() + " | ");
         }
     }
 

@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -31,9 +32,9 @@ public class ActivitySegunda extends AppCompatActivity {
         Telefono = (EditText) findViewById(R.id.txtTelefono);
         Pais = (Spinner) findViewById(R.id.cmbPais);
         Acerca = (EditText) findViewById(R.id.txtAcerca);
-        ID = (EditText) findViewById(R.id.txtID);
         btnGuardar = (Button) findViewById(R.id.btnGuardar);
         btnCancelar = (Button) findViewById(R.id.btnCancelar);
+        ID = (EditText) findViewById(R.id.txtID);
 
         btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +44,14 @@ public class ActivitySegunda extends AppCompatActivity {
             }
         });
 
+        //Spinner Pais = (Spinner) findViewById(R.id.cmbPais);
+// Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.pais_array, android.R.layout.simple_spinner_item);
+// Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+        Pais.setAdapter(adapter);
         btnCancelar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -68,6 +77,7 @@ public class ActivitySegunda extends AppCompatActivity {
         values.put(DatabaseHelper.telefono, Telefono.getText().toString());
         values.put(DatabaseHelper.pais, Pais.getSelectedItem().toString());
         values.put(DatabaseHelper.acerca, Acerca.getText().toString());
+        values.put(DatabaseHelper.id, ID.getText().toString());
 
 
         Long result = db.insert(DatabaseHelper.NameTable, DatabaseHelper.id, values);
