@@ -27,6 +27,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="#E91E63"
+        android:entries="@array/pais_array"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -111,14 +112,17 @@
 
     <EditText
         android:id="@+id/txtID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="93dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="20dp"
         android:alpha="0"
         android:clickable="false"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintEnd_toStartOf="@+id/imgAvatar"
-        tools:layout_editor_absoluteY="156dp" />
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

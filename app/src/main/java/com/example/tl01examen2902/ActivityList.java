@@ -67,9 +67,9 @@ public class ActivityList extends AppCompatActivity {
         while(cursor.moveToNext()){
             person = new Contactos();
             person.setId(cursor.getInt(0));
-            person.setNombre(cursor.getString(1));
-            person.setTelefono(cursor.getInt(2));
-            person.setPais(cursor.getString(3));
+            person.setPais(cursor.getString(1));
+            person.setNombre(cursor.getString(2));
+            person.setTelefono(cursor.getInt(3));
             person.setAcerca(cursor.getString(4));
 
             list.add(person);
@@ -84,7 +84,10 @@ public class ActivityList extends AppCompatActivity {
         ArrayContactos = new ArrayList<String>();
         for(int i = 0; i < list.size(); i++){
             ArrayContactos.add(list.get(i).getId() + " | "+
+                    list.get(i).getPais() + " | " +
                     list.get(i).getNombre() + " | " +
+                    list.get(i).getTelefono() + " | " +
+                    list.get(i).getAcerca() + " | " +
                     list.get(i).getId() + " | ");
         }
     }
