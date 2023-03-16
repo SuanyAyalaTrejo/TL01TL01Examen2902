@@ -20,7 +20,7 @@ import com.example.tl01examen2902.configuracion.SQLiteConnection;
 public class ActivitySegunda extends AppCompatActivity {
 
 
-    EditText Nombre, Telefono, Acerca, ID;
+    EditText Nombre, Telefono, Acerca;
 
     Spinner Pais;
     Button btnGuardar, btnCancelar;
@@ -31,7 +31,7 @@ public class ActivitySegunda extends AppCompatActivity {
         try {
 
 
-        ID = (EditText) findViewById(R.id.txtID);
+
         Nombre = (EditText) findViewById(R.id.txtNombre);
         Telefono = (EditText) findViewById(R.id.txtTelefono);
         Pais = (Spinner) findViewById(R.id.cmbPais);
@@ -81,7 +81,7 @@ public class ActivitySegunda extends AppCompatActivity {
         SQLiteDatabase db = connection.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(DatabaseHelper.id, ID.getText().toString());
+
         values.put(DatabaseHelper.pais, Pais.getSelectedItem().toString());
         values.put(DatabaseHelper.nombre, Nombre.getText().toString());
         values.put(DatabaseHelper.telefono, Telefono.getText().toString());

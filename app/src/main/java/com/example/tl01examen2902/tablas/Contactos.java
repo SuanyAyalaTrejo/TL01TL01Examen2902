@@ -9,8 +9,8 @@ public class Contactos {
 
     private String acerca;
 
-    public Contactos(Integer id, String pais, String nombre, Integer telefono, String acerca) {
-        this.id = id;
+    public Contactos( String pais, String nombre, Integer telefono, String acerca) {
+
         this.pais = pais;
         this.nombre = nombre;
         this.telefono = telefono;
@@ -19,13 +19,7 @@ public class Contactos {
 
     public Contactos() {}
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
 
     public String getPais() {

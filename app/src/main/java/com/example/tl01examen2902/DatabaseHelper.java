@@ -9,7 +9,7 @@ public class DatabaseHelper {
 
     public static final String NameDatabase = "DbContactos";
     public static final String NameTable= "Contactos";
-    public static final String id = "ID";
+    public static final String id= "ID";
     public static final String pais = "Pais";
     public static final String nombre = "Nombre";
     public static final String telefono = "Telefono";
