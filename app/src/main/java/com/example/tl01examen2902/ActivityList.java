@@ -57,7 +57,7 @@ public class ActivityList extends AppCompatActivity {
         btnLlamar.setOnClickListener(new View.OnClickListener() {
         @Override
             public void onClick(View view) {
-            Intent intent = new Intent(Intent.ACTION_CALL);//llamad
+            Intent intent = new Intent(Intent.ACTION_DIAL);//llamad
             Uri.parse("Numero: " + txtTelefono);
             startActivity(intent);
             }
