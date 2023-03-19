@@ -125,4 +125,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/btnimagen"
+        android:layout_width="117dp"
+        android:layout_height="60dp"
+        android:onClick="onclick"
+        android:text="Subir imagen"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="74dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
